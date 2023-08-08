@@ -12,7 +12,7 @@
 
 使用方法：
 
-把免杀马命名为`test.exe` 运行脚本`python icon-exe.py -f ico_file`
+把免杀马命名为`test.exe` 运行脚本`python icon-exe.py -f ico_file -n number`
 
 （`ResourceHacker.exe`来源于互联网，不放心可自行替换）
 
