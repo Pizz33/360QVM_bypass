@@ -12,7 +12,9 @@
 
 使用方法：
 
-把免杀马命名为`test.exe` 运行脚本`python icon-exe.py -f ico_file`（`ResourceHacker.exe`来源于互联网，不放心可自行替换）
+把免杀马命名为`test.exe` 运行脚本`python icon-exe.py -f ico_file`
+
+（`ResourceHacker.exe`来源于互联网，不放心可自行替换）
 
 ![image](https://github.com/Pizz33/360QVM_bypass/assets/88339946/ba5c04a3-a1d4-4f20-a648-3495518d06ad)
 
