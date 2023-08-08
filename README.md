@@ -18,7 +18,7 @@
 
 ![image](https://github.com/Pizz33/360QVM_bypass/assets/88339946/ba5c04a3-a1d4-4f20-a648-3495518d06ad)
 
-脚本通过生成不同hash的ico并写入程序中，实现批量bypass360QVM
+脚本通过生成不同hash的ico并写入程序中，实现批量bypass360QVM，生成文件在output文件夹内
 
 ![image](https://github.com/Pizz33/360QVM_bypass/assets/88339946/2ea3a967-b845-435d-a806-85b28e838f7e)
 
