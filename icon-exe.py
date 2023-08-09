@@ -87,7 +87,7 @@ def generate_icons(input_icon_file, num_icons, max_color_change):
     for i in range(num_icons):
         output_icon_file = generate_random_filename()
         modify_icon_color(input_icon_file, output_icon_file, max_color_change)
-        output_exe_file = f"output/ou_{i+1}.exe"  # 将生成的exe文件放入output文件夹
+        output_exe_file = f"output/xppewndwdm_{i+1}.exe"  # 将生成的exe文件放入output文件夹
         add_icon_to_exe(output_icon_file, exe_file, output_exe_file)
         add_version_info(output_exe_file)  # 为每个生成的exe文件添加版本信息
 
@@ -109,6 +109,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="修改ICO文件的颜色。")
     parser.add_argument("-f", "--file", dest="input_icon_file", required=True, help="输入ICO文件。")
     parser.add_argument("-n", "--number", dest="num_icons", type=int, default=5, help="要生成的图标数量。")
+    parser.add_argument("-maxc", "--maxcolorchange", dest="max_color_change", type=int, default=8, help="最大颜色变化范围。")
+    parser.add_argument("-a", "--author", dest="author_name", default="pantom", help="要包含在ICO文件中的作者名称。")
     args = parser.parse_args()
     print(logo())
 
