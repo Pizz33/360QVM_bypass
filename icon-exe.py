@@ -63,7 +63,7 @@ def generate_random_filename():
 def add_icon_to_exe(icon_file, exe_file, output_file):
     command = f'ResourceHacker -open "{exe_file}" -save "{output_file}" -action addskip -res "{icon_file}" -mask ICONGROUP,MAINICON,'
     subprocess.run(command, shell=True)
-
+'''
 def generate_random_version():
     # 生成随机版本号，格式为 X.Y.Z.W
     return f"{random.randint(2, 9)}.{random.randint(2, 9)}.{random.randint(2, 9)}.{random.randint(2, 9)}"
@@ -75,7 +75,7 @@ def add_version_info(exe_file):
 
     command = f'rcedit "{exe_file}" --set-file-version "{file_version}" --set-product-version "{product_version}"'
     subprocess.run(command, shell=True)
-
+'''
 def generate_icons(input_icon_file, num_icons, max_color_change):
     exe_file = "test.exe"
     generated_icon_files = []
@@ -89,7 +89,7 @@ def generate_icons(input_icon_file, num_icons, max_color_change):
         modify_icon_color(input_icon_file, output_icon_file, max_color_change)
         output_exe_file = f"output/xppewndwdm_{i+1}.exe"  # 将生成的exe文件放入output文件夹
         add_icon_to_exe(output_icon_file, exe_file, output_exe_file)
-        add_version_info(output_exe_file)  # 为每个生成的exe文件添加版本信息
+        #add_version_info(output_exe_file)  # 为每个生成的exe文件添加版本信息
 
         # 将生成的图标文件名添加到列表中
         generated_icon_files.append(output_icon_file)
@@ -110,7 +110,6 @@ if __name__ == "__main__":
     parser.add_argument("-f", "--file", dest="input_icon_file", required=True, help="输入ICO文件。")
     parser.add_argument("-n", "--number", dest="num_icons", type=int, default=5, help="要生成的图标数量。")
     parser.add_argument("-maxc", "--maxcolorchange", dest="max_color_change", type=int, default=8, help="最大颜色变化范围。")
-    parser.add_argument("-a", "--author", dest="author_name", default="pantom", help="要包含在ICO文件中的作者名称。")
     args = parser.parse_args()
     print(logo())
 
