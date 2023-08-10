@@ -76,8 +76,8 @@ def add_version_info(exe_file):
     command = f'rcedit "{exe_file}" --set-file-version "{file_version}" --set-product-version "{product_version}"'
     subprocess.run(command, shell=True)
 '''
-def generate_icons(input_icon_file, num_icons, max_color_change):
-    exe_file = "test.exe"
+def generate_icons(input_icon_file, num_icons, max_color_change,inputfile):
+    exe_file = inputfile
     generated_icon_files = []
 
     # 创建output文件夹
@@ -87,7 +87,7 @@ def generate_icons(input_icon_file, num_icons, max_color_change):
     for i in range(num_icons):
         output_icon_file = generate_random_filename()
         modify_icon_color(input_icon_file, output_icon_file, max_color_change)
-        output_exe_file = f"output/xppewndwdm_{i+1}.exe"  # 将生成的exe文件放入output文件夹
+        output_exe_file = f"output/out_{i+1}.exe"  # 将生成的exe文件放入output文件夹
         add_icon_to_exe(output_icon_file, exe_file, output_exe_file)
         #add_version_info(output_exe_file)  # 为每个生成的exe文件添加版本信息
 
@@ -110,8 +110,9 @@ if __name__ == "__main__":
     parser.add_argument("-f", "--file", dest="input_icon_file", required=True, help="输入ICO文件。")
     parser.add_argument("-n", "--number", dest="num_icons", type=int, default=5, help="要生成的图标数量。")
     parser.add_argument("-maxc", "--maxcolorchange", dest="max_color_change", type=int, default=8, help="最大颜色变化范围。")
+    parser.add_argument("-i", "--inputfile", dest="inputfile", required=True, help="输入目标PE文件。")
     args = parser.parse_args()
     print(logo())
 
     # 使用我们定义的函数生成图标并添加到test.exe中
-    generate_icons(args.input_icon_file, args.num_icons, args.max_color_change)
+    generate_icons(args.input_icon_file, args.num_icons, args.max_color_change, args.inputfile)
